@@ -1,0 +1,264 @@
+/* App.css */
+.ledger-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-deep-navy);
+}
+
+.ledger-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-deep-navy);
+}
+
+.ledger-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Strict Grid System */
+.ledger-grid-wrapper {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.ledger-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(6, minmax(180px, 1fr));
+  min-width: max-content;
+  background-color: var(--color-gray-200);
+  gap: 1px; /* border thickness */
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* Sticky headers and time labels */
+.ledger-col-header, .ledger-time-label, .ledger-cell {
+  background-color: var(--color-white);
+  padding: 0.75rem;
+}
+
+.ledger-col-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--color-gray-100);
+  font-weight: 600;
+  color: var(--color-tech-blue);
+  text-align: center;
+  border-bottom: 2px solid var(--color-gray-300);
+}
+
+.ledger-col-header-corner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  background-color: var(--color-gray-100);
+  border-bottom: 2px solid var(--color-gray-300);
+  border-right: 2px solid var(--color-gray-300);
+}
+
+.ledger-time-label {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background-color: var(--color-gray-100);
+  font-weight: 500;
+  color: var(--color-gray-600);
+  text-align: right;
+  border-right: 2px solid var(--color-gray-300);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+/* Interactive Cells */
+.ledger-cell {
+  position: relative;
+  min-height: 60px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ledger-cell:hover {
+  background-color: var(--color-gray-100);
+}
+
+.ledger-cell.is-booked {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+}
+
+.ledger-cell.is-restricted {
+  background-color: #fef2f2;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #fee2e2 25%,
+    transparent 25%,
+    transparent 75%,
+    #fee2e2 75%,
+    #fee2e2
+  );
+  background-size: 10px 10px;
+  cursor: not-allowed;
+}
+
+/* Booking Block */
+.booking-block {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: var(--color-tech-blue);
+  color: var(--color-white);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-left: 4px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-title {
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.booking-org {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+/* Depth Hierarchy: Focus Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  animation: fadeIn 0.2s forwards;
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(20px);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+.modal-header {
+  background-color: var(--color-deep-navy);
+  color: var(--color-white);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--color-gray-300);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--color-white);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-tech-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.modal-footer {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-gray-100);
+  border-top: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-gray-200);
+  color: var(--color-deep-navy);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
+}
