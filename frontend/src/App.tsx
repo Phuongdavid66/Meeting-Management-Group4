@@ -1,6 +1,7 @@
-import React from 'react';
+
 import TimetableGrid from './components/TimetableGrid';
 import { Calendar } from 'lucide-react';
+import Button from './components/Button';
 import './App.css';
 import './index.css';
 
@@ -12,11 +13,11 @@ function App() {
           <Calendar size={24} color="var(--color-accent)" />
           ICTU <span>Meeting</span>
         </div>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <span style={{ fontSize: '0.9rem' }}>Xin chào, Giảng viên</span>
-          <button className="btn btn-ghost" style={{ borderColor: 'var(--color-gray-600)', color: 'var(--color-white)' }}>
+        <div className="topbar-actions">
+          <span className="topbar-greeting">Xin chào, Giảng viên</span>
+          <Button variant="ghost" className="topbar-logout">
             Đăng xuất
-          </button>
+          </Button>
         </div>
       </header>
       <main className="main-content">

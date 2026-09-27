@@ -96,3 +96,38 @@ body {
   padding: 0; /* Full width for the grid */
   background-color: var(--color-white);
 }
+
+/* Shared UI utilities */
+.btn:disabled,
+.form-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.btn:focus-visible,
+.form-input:focus-visible,
+.modal-close:focus-visible,
+.ledger-cell:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar-logout {
+  border-color: var(--color-gray-600);
+  color: var(--color-white);
+}
+
+.topbar-logout:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+}
+
+.topbar-greeting {
+  font-size: 0.9rem;
+}
