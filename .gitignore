@@ -1,0 +1,20 @@
+# Node
+node_modules/
+dist/
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+.env
+
+# IDEs
+.idea/
+.vscode/
+
+# Impeccable/Agent data
+.agent/
+.impeccable/review/

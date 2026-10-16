@@ -1,0 +1,108 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned The University Ledger. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The University Ledger",
+      "kicker": "THE ROLL",
+      "lineage": "academic timetable ledger",
+      "thesis": "Rows of times, columns of rooms, a strict high-density grid.",
+      "palette": [
+        "#0f172a",
+        "#1e3a8a",
+        "#f8fafc",
+        "#f59e0b"
+      ],
+      "materials": [
+        "strict grid lines",
+        "color-coded tags"
+      ],
+      "viewport": "A strict calendar matrix where rooms are columns and times are rows.",
+      "risk": "Can feel overwhelmingly dense if not spaced properly.",
+      "raised": [
+        {
+          "from": "challenger-labanotation",
+          "raise": "Symmetry and clear temporal lanes guiding the eye."
+        },
+        {
+          "from": "challenger-cutting-bench",
+          "raise": "Clear state markers (flags) for room status."
+        },
+        {
+          "from": "challenger-cracktro",
+          "raise": "Strong depth hierarchy for focus states (booking a room pulls it to the front)."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-a-university-ledger.webp"
+    },
+    {
+      "id": "challenger-labanotation",
+      "label": "Labanotation Diagram",
+      "verdict": "declined",
+      "lineage": "notation systems",
+      "palette": ["#ffffff", "#000000", "#e5e7eb"],
+      "materials": ["white score paper", "black symbol blocks"],
+      "case": "Fuses poorly: time flowing bottom to top is counter-intuitive for a calendar.",
+      "kept": "Symmetry and clear temporal lanes.",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-labanotation-hero.webp",
+      "viewport": "Columns flank a center line, time flows bottom to top.",
+      "thesis": "Time flows upward like a music score.",
+      "risk": "Counter intuitive."
+    },
+    {
+      "id": "challenger-cutting-bench",
+      "label": "Cutting Bench Select Rail",
+      "verdict": "declined",
+      "lineage": "film cutting bench",
+      "palette": ["#000000", "#f97316", "#ffffff"],
+      "materials": ["film grain", "grease pencil"],
+      "case": "Fuses poorly: orange and black clashes with the ICTU tech blue brand.",
+      "kept": "Clear state markers (flags) for room status.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp",
+      "viewport": "Perforated rail crosses the screen, items hanging.",
+      "thesis": "Editing bench for meeting rooms.",
+      "risk": "Clashes with brand."
+    },
+    {
+      "id": "challenger-cracktro",
+      "label": "Cracktro Scroller Queue",
+      "verdict": "declined",
+      "lineage": "cracktro title screen",
+      "palette": ["#000000", "#f3f4f6", "#f59e0b"],
+      "materials": ["emissive black void", "grey dust"],
+      "case": "Fuses poorly: too casual/hacker for a university admin tool.",
+      "kept": "Strong depth hierarchy for focus states.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-cracktro-scroller-queue-hero.webp",
+      "viewport": "Items scrolling with 3D depth over a void.",
+      "thesis": "Queue system represented by z-index layers.",
+      "risk": "Too informal."
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What this category ships, executed impeccably.",
+    "palette": [
+      "#ffffff",
+      "#111827",
+      "#2563eb"
+    ],
+    "materials": [
+      "clean grid",
+      "product photography"
+    ],
+    "viewport": "The standard horizontal timeline calendar, at full craft.",
+    "risk": "Indistinguishable from the competition by design.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}
